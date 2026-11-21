@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Saad Alshahrani - Computer Science, KFUPM</title>
+  <meta name="description" content="Portfolio of Saad Alshahrani, a computer science student at KFUPM." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml" />
+  <!-- Apply the saved theme before the page paints, so there is no light flash in dark mode -->
+  <script>
+    document.documentElement.classList.add("js");
+    try {
+      var t = localStorage.getItem("theme");
+      if (t) document.documentElement.setAttribute("data-theme", t);
+    } catch (e) {}
+  </script>
+</head>
+
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header>
+    <div class="wrap header-inner">
+      <a class="wordmark" href="#about">Saad Alshahrani</a>
+      <nav aria-label="Main">
+        <a href="#about">About</a>
+        <a href="#work">Work</a>
+        <a href="#github">GitHub</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button id="themeToggle" type="button" aria-label="Switch colour theme">Dark</button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section id="about" class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <p class="greeting" id="greeting">Hello.</p>
+          <p class="remembered" id="remembered" hidden>
+            Not you? <button type="button" id="forgetMe" class="link-button">Forget my name</button>
+          </p>
+          <h1>Saad Alshahrani</h1>
+          <p class="tagline">I build small tools that make everyday campus software behave.</p>
+          <p class="intro">
+            I am a computer science student at King Fahd University of Petroleum and Minerals,
+            working mostly in Java, Python, and the web. Most of what I build starts as a problem
+            I ran into myself, which is why the projects below lean practical rather than flashy.
+          </p>
+          <p class="actions">
+            <a class="button" href="#work">See my work</a>
+            <a href="#contact">Get in touch</a>
+          </p>
+        </div>
+        <picture class="portrait">
+          <source srcset="assets/images/saad.webp" type="image/webp" />
+          <img src="assets/images/saad.jpg" alt="Photo of Saad Alshahrani" width="475" height="492" fetchpriority="high" />
+        </picture>
+      </div>
+    </section>
+
+    <section id="work">
+      <div class="wrap">
+        <h2>Work</h2>
+        <p class="note">Filter by type, search by name, language, or tool, and sort the results. Your choices are remembered.</p>
+
+        <div class="toolbar">
+          <div class="filters" role="group" aria-label="Filter projects">
+            <button type="button" class="chip" data-filter="all" aria-pressed="true">All</button>
+            <button type="button" class="chip" data-filter="java" aria-pressed="false">Java</button>
+            <button type="button" class="chip" data-filter="web" aria-pressed="false">Web</button>
+            <button type="button" class="chip" data-filter="team" aria-pressed="false">Team</button>
+          </div>
+          <div class="tools">
+            <label class="search">
+              <span class="visually-hidden">Search projects</span>
+              <input type="search" id="projectSearch" placeholder="Search projects" autocomplete="off" />
+            </label>
+            <label class="sort">
+              <span class="visually-hidden">Sort projects</span>
+              <select id="projectSort">
+                <option value="newest">Newest first</option>
+                <option value="oldest">Oldest first</option>
+                <option value="az">Name A to Z</option>
+                <option value="za">Name Z to A</option>
+              </select>
+            </label>
+          </div>
+        </div>
+
+        <p class="count" id="projectCount" aria-live="polite"></p>
+        <div id="projectList"></div>
+        <div class="empty" id="projectEmpty" hidden>
+          <p>No projects match that search.</p>
+          <button type="button" id="clearFilters">Clear filters</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="github" class="alt">
+      <div class="wrap">
+        <h2>Latest on GitHub</h2>
+        <p class="note">Pulled live from the GitHub API each time the page loads.</p>
+        <div id="repoState" class="state" aria-live="polite"></div>
+        <ul class="repos" id="repoList"></ul>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="wrap">
+        <h2>Skills</h2>
+        <ul class="skills reveal">
+          <li><span>Languages</span> Java, Python, JavaScript, HTML, CSS, SQL</li>
+          <li><span>Comfortable with</span> Object oriented design, Git and GitHub, REST APIs, responsive layout</li>
+          <li><span>Learning now</span> Web engineering, data science, accessibility</li>
+          <li><span>Outside class</span> PC hardware, padel, Minecraft</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="contact" class="alt">
+      <div class="wrap contact-grid">
+        <div class="reveal">
+          <h2>Contact</h2>
+          <p class="note">Send a message and I will reply by email.</p>
+          <ul class="links">
+            <li><a href="mailto:saadmobarak0110@gmail.com">saadmobarak0110@gmail.com</a></li>
+            <li><a href="https://github.com/xcwezr">github.com/xcwezr</a></li>
+        </div>
+
+        <form id="contactForm" class="reveal" novalidate>
+          <div class="field">
+            <label for="name">Name</label>
+            <input type="text" id="name" required aria-describedby="name-error" />
+            <p class="error" id="name-error"></p>
+          </div>
+
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="email" id="email" required aria-describedby="email-error" />
+            <p class="error" id="email-error"></p>
+          </div>
+
+          <div class="field">
+            <label for="message">Message <span class="hint" id="messageCount">0 / 500</span></label>
+            <textarea id="message" rows="5" maxlength="500" required aria-describedby="message-error"></textarea>
+            <p class="error" id="message-error"></p>
+          </div>
+
+          <button class="button" type="submit">Send message</button>
+          <p class="status" id="formStatus" role="status"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <p>Built for SWE 363 at KFUPM.</p>
+      <p id="visitInfo" class="visit-info"></p>
+      <p id="year"></p>
+    </div>
+  </footer>
+
+  <script src="js/projects.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

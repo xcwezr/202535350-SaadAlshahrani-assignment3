@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-label="Hydrogen Cell placeholder">
+  <rect width="640" height="360" fill="#dcd9cf"/>
+  <rect x="0" y="0" width="640" height="44" fill="#c9c6b9"/>
+  <circle cx="24" cy="22" r="6" fill="#a9a698"/>
+  <circle cx="46" cy="22" r="6" fill="#a9a698"/>
+  <circle cx="68" cy="22" r="6" fill="#a9a698"/>
+  <!-- Air in, water drop, split into H2 and O2 -->
+  <path d="M80 150h90M80 175h70M80 200h90" stroke="#bcb9ac" stroke-width="10" stroke-linecap="round"/>
+  <path d="M320 105c-28 40-42 64-42 86a42 42 0 0 0 84 0c0-22-14-46-42-86z" fill="#17472e"/>
+  <path d="M378 185h70" stroke="#bcb9ac" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="490" cy="150" r="26" fill="#c9c6b9"/>
+  <circle cx="490" cy="222" r="26" fill="#bcb9ac"/>
+  <text x="490" y="156" font-family="Georgia, serif" font-size="17" fill="#52574f" text-anchor="middle">H₂</text>
+  <text x="490" y="228" font-family="Georgia, serif" font-size="17" fill="#52574f" text-anchor="middle">O₂</text>
+  <text x="320" y="320" font-family="Georgia, serif" font-size="16" fill="#6b6f66" text-anchor="middle">Hydrogen Cell</text>
+</svg>
